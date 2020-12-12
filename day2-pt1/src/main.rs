@@ -13,25 +13,24 @@ fn main() {
 fn run<R: BufRead>(input: R) -> usize {
     input
         .lines()
-        .map(validate_line)
-        .filter(|res| {
-            *res.as_ref().unwrap_or_else(|err| {
-                eprintln!("{}", err);
-                &false
-            })
-        })
+        .map(parse_line)
+        .filter_map(|r| r.map_err(|e| eprintln!("{}", e)).ok())
+        .filter(validate_record)
         .count()
 }
 
-fn validate_line(line_res: Result<String, std::io::Error>) -> Result<bool, Error> {
+fn parse_line(line_res: Result<String, std::io::Error>) -> Result<Record, Error> {
     let line = line_res.context(ReadLine)?;
-    let record: Record = line.parse().with_context(|| ParseLine { line })?;
+    line.parse().with_context(|| ParseLine { line })
+}
+
+fn validate_record(record: &Record) -> bool {
     let occurrences = record
         .password
         .chars()
         .filter(|&c| c == record.req_letter)
         .count();
-    Ok(record.range.contains(&occurrences))
+    record.range.contains(&occurrences)
 }
 
 #[derive(Debug, Snafu)]

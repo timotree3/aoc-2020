@@ -1,2 +1,2 @@
 [workspace]
-members = ["day1-pt1", "day1-pt2", "day2-pt1", "day2-pt2", "day3-pt1", "day3-pt2", "day4-pt1", "day4-pt2", "day5-pt1", "day5-pt2", "day6-pt1", "day6-pt2", "day7-pt1", "day7-pt2", "day8-pt1", "day8-pt2", "day9-pt1", "day9-pt2", "day10-pt1", "day10-pt2", "day11-pt1", "day11-pt2", "day12-pt1", "day12-pt2", "day13-pt1", "day13-pt2", "day14-pt1", "day14-pt2", "day15-pt1"]
+members = ["day1-pt1", "day1-pt2", "day2-pt1", "day2-pt2", "day3-pt1", "day3-pt2", "day4-pt1", "day4-pt2", "day5-pt1", "day5-pt2", "day6-pt1", "day6-pt2", "day7-pt1", "day7-pt2", "day8-pt1", "day8-pt2", "day9-pt1", "day9-pt2", "day10-pt1", "day10-pt2", "day11-pt1", "day11-pt2", "day12-pt1", "day12-pt2", "day13-pt1", "day13-pt2", "day14-pt1", "day14-pt2", "day15-pt1", "day15-pt2"]

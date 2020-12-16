@@ -1,4 +1,4 @@
-use std::{convert::TryFrom, io::Read};
+use std::io::Read;
 
 const EMPTY: u8 = b'L';
 const FULL: u8 = b'#';

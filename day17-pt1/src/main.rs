@@ -1,4 +1,4 @@
-use std::{collections::HashSet, fs::read, io::Read};
+use std::{collections::HashSet, io::Read};
 
 fn main() {
     let mut scratch = read_starting_state();
@@ -60,8 +60,8 @@ fn count_active_neighbors_bounded_by_4(
 
 fn neighbors(x: usize, y: usize, z: usize) -> impl Iterator<Item = (usize, usize, usize)> {
     (x - 1..=x + 1).flat_map(move |neighbor_x| {
-        (y - 1..=y + 1).clone().flat_map(move |neighbor_y| {
-            (z - 1..=z + 1).clone().filter_map(move |neighbor_z| {
+        (y - 1..=y + 1).flat_map(move |neighbor_y| {
+            (z - 1..=z + 1).filter_map(move |neighbor_z| {
                 if neighbor_x == x && neighbor_y == y && neighbor_z == z {
                     None
                 } else {

@@ -23,10 +23,9 @@ fn main() {
         .next()
         .unwrap()
         .lines()
-        .skip(1)
-        .next()
+        .nth(1)
         .unwrap()
-        .split(",")
+        .split(',')
         .map(|num| num.parse().unwrap())
         .collect();
     let tickets: Vec<Vec<usize>> = sections
@@ -36,7 +35,7 @@ fn main() {
         .skip(1)
         .map(|ticket| {
             ticket
-                .split(",")
+                .split(',')
                 .map(|num| num.parse().unwrap())
                 .collect::<Vec<usize>>()
         })
@@ -67,7 +66,7 @@ fn main() {
             {
                 if other_position != identified_position {
                     possibilities.remove(&field_id);
-                    if possibilities.len() == 0 {
+                    if possibilities.is_empty() {
                         panic!();
                     }
                 }

@@ -22,7 +22,7 @@ fn main() {
     let answer: usize = tickets
         .flat_map(|ticket| {
             ticket
-                .split(",")
+                .split(',')
                 .map(|num| num.parse().unwrap())
                 .filter(|num| !ranges.iter().any(|range| range.contains(&num)))
         })
